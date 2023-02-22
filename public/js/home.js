@@ -10,8 +10,6 @@ document.getElementById("transactions-button").addEventListener("click", functio
     window.location.href = "transactions.html"
 })
 
-
-
 //ADICIONAR LANÇAMENTO
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -32,7 +30,6 @@ document.getElementById("transaction-form").addEventListener("submit", function(
     getCashIn();
     getCashOut();
     getTotal();
-
 
     alert("Lançamento adicionado com sucesso.");
 });
@@ -160,7 +157,6 @@ function getTotal() {
 
     document.getElementById("total").innerHTML = `R$ ${total.toFixed(2)}`;
 }
-
 
 function saveData(data) {
     localStorage.setItem(data.login, JSON.stringify(data));

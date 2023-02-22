@@ -1,11 +1,14 @@
 const myModal= new bootstrap.Modal("#transaction-modal");
 let logged= sessionStorage.getItem("logged");
 const session= localStorage.getItem("session");
+
 let data = {
     transactions: []
 };
 
 document.getElementById("button-logout").addEventListener("click", logout);
+
+
 
 //ADICIONAR LANÇAMENTO
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
@@ -14,7 +17,7 @@ document.getElementById("transaction-form").addEventListener("submit", function(
     const value = parseFloat(document.getElementById("value-input").value);
     const description = document.getElementById("description-input").value;
     const date = document.getElementById("date-input").value;
-    const type = document.querySelector('input[name="type-input"]: checked').value;
+    const type = document.querySelector('input[name="type-input"]:checked').value;
 
     data.transactions.unshift({
         value: value, type: type, description: description, date: date
@@ -77,9 +80,7 @@ function getTransactions() {
                     <td>${type}</td>
                     <td>${item.description}</td>
                 </tr>
-
             `
-
         })
     }
 
